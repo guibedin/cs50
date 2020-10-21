@@ -1,0 +1,31 @@
+.title {
+    text-align: center;
+    color: blue;
+}
+
+.subtitle {
+    text-align: center;
+    color: grey;
+}
+
+i {
+    color: grey;
+}
+
+i:hover {
+    color: lightgray;
+}
+
+main {
+    margin-left: 5vw;
+}
+
+.about {
+    color: black;
+    font-size: 1.2em;
+}
+
+.colors {
+    color: grey;
+    font-size: 1.2em;
+}

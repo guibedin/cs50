@@ -1,1 +1,8 @@
 *.db
+results
+.vscode
+week8/finance/bin
+week8/finance/include
+week8/finance/lib*
+week8/finance/share
+week8/finance/info.txt

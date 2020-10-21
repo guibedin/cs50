@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Symbol</th>
+                <th scope="col">Shares</th>
+                <th scope="col">Current Price</th>
+                <th scope="col">Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for value in values %}
+                <tr>
+                    <td>{{ value.symbol }}</td>
+                    <td>{{ value.shares }}</td>
+                    {% if value.symbol == "CASH" %}
+                        <td>{{ value.price }}</td>
+                    {% else %}
+                        <td>{{ value.price|usd }}</td>
+                    {% endif %}
+                    <td>{{ value.total|usd }}</td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <td colspan="3"></td>
+                <td class="table-success">{{ total_sum|usd }}</td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}

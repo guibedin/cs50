@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <p class="text-center">
+        You can deposit between $1.00 and $10,000.00 to your account at each time!
+    </p>
+    
+    <form action="/deposit" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="deposit" placeholder="How much?" type="number" min="1.00" max="10000.00" step="0.01">
+        </div>
+        <button class="btn btn-primary" type="submit">Deposit</button>
+    </form>
+{% endblock %}

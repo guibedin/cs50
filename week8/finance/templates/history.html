@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Transactions History
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Transaction Type</th>
+                <th scope="col">Symbol</th>
+                <th scope="col">Shares</th>
+                <th scope="col">Total Price</th>
+                <th scope="colt">Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for value in history %}
+                <tr>
+                    {% if value.type == "buy" %}
+                        <td class="table-danger">Buy</td>
+                    {% else %}
+                        <td class="table-success">Sell</td>
+                    {% endif %}
+                    <td>{{ value.symbol }}</td>
+                    <td>{{ value.shares }}</td>
+                    <td>{{ value.total|usd }}</td>
+                    <td>{{ value.date }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
